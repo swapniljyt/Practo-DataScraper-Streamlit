@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+Practo_DataScraper_Streamlit.egg-info/PKG-INFO
+Practo_DataScraper_Streamlit.egg-info/SOURCES.txt
+Practo_DataScraper_Streamlit.egg-info/dependency_links.txt
+Practo_DataScraper_Streamlit.egg-info/top_level.txt
+src/__init__.py
+src/scrapper.py
+src/streamlitapp.py
+src/url_generator.py

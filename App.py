@@ -4,7 +4,7 @@ import streamlit as st
 import pandas as pd
 
 
-st.title('Practo-Doctor-Datascrapper')
+st.title('Practo-Doctors-Datascrapper')
 
 st.header('Enter the input features:')
 location = st.text_input("Doctor Location:")
@@ -20,7 +20,7 @@ if st.button('Scrap'):
         data=doctor_scrapper(url)
         progress = int((page / pages) * 100)
         progress_bar.progress(progress)
-        status_text.text(f"Scraping page {page}...")
+        status_text.text(f"Scraping page😊 {page}...")
         if data:
             all_doctors.extend(data)
             count+=1
@@ -28,11 +28,12 @@ if st.button('Scrap'):
             break
     if(count>0):
         st.write(pd.DataFrame(all_doctors))
-        status_text.text("Scraping complete!")
+        status_text.text("Scraping complete✔")
         count=0
     else:
-        st.write("No doctors found")
-        status_text.text("Scraping complete!")  
+        st.markdown('**No Doctor Found ☹**')
+        st.markdown('<small>Please check the input variables⚠</small>', unsafe_allow_html=True)
+        status_text.text("Scraping complete✔")  
 
     progress_bar.empty()           
 

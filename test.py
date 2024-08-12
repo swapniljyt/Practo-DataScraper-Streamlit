@@ -9,5 +9,5 @@ if data:
     print(data)
 
 else:
-    print("No doctor found at this location")
+    print("No doctors found at this location")
 

@@ -10,6 +10,7 @@ st.header('Enter the input features:')
 location = st.text_input("Doctor Location:")
 specialization = st.text_input("Doctor Specialization:")
 pages=10
+count=0
 progress_bar = st.progress(0)
 status_text = st.empty()
 if st.button('Scrap'):
@@ -22,11 +23,17 @@ if st.button('Scrap'):
         status_text.text(f"Scraping page {page}...")
         if data:
             all_doctors.extend(data)
+            count+=1
         else:
-            st.write("no doctor Found on this page")
             break
-    progress_bar.empty()
-    status_text.text("Scraping complete!")        
-    st.write(pd.DataFrame(all_doctors))            
+    if(count>0):
+        st.write(pd.DataFrame(all_doctors))
+        status_text.text("Scraping complete!")
+        count=0
+    else:
+        st.write("No doctors found")
+        status_text.text("Scraping complete!")  
+
+    progress_bar.empty()           
 
 

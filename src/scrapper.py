@@ -15,9 +15,11 @@ def doctor_scrapper(url):
         doctors = soup.find_all("div", class_="info-section")
         for doctor in doctors:
             name= doctor.find("h2", class_="doctor-name")
-            name = name.text.strip() if name else "N/A"
-    
-            
+            if name:
+                name = name.text.strip()
+            else:
+                continue    
+                
             specialization = doctor.find("div", class_="u-grey_3-text").find("span")
             specialization = specialization.text.strip() if specialization else "N/A"
     

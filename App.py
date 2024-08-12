@@ -25,10 +25,3 @@ if st.button('Scrap'):
     st.write(pd.DataFrame(all_doctors))            
 
 
-
-    url=generator(location,specialization,"1")
-    data=doctor_scrapper(url)
-    if data:
-    print(data)
-    else:
-    print("No doctor found at this location")

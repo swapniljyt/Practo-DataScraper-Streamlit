@@ -8,7 +8,16 @@ st.title('Practo-Doctors-Datascrapper👨‍⚕️')
 
 st.header('Enter the required informtion:')
 location = st.text_input("Doctor Location City:")
-specialization = st.text_input("Doctor Specialization:")
+specializations = [
+    "Surgeon","Ophthalmologist", "Dermatologist", "Cardiologist", "Psychiatrist",
+    "Gastroenterologist", "ear-nose-throat (ent) specialist", "Gynecologist / Obstetrician",
+    "Neurologist", "Urologist", "Dentist", "Prosthodontist", "Orthodontist",
+    "Pediatric Dentist", "Endodontist", "Implantologist", "Ayurveda",
+    "Homoeopath", "Siddha", "Unani", "Yoga & Naturopathy", "Acupuncturist",
+    "Physiotherapist", "Psychologist", "Audiologist", "Speech Therapist",
+    "Dietitian/Nutritionist"
+]
+specialization = st.selectbox("Select a specialization:", specializations)
 pages=10
 count=0
 progress_bar = st.progress(0)
